@@ -1,5 +1,5 @@
 Walk 'n Talk Read Me
-===========
+===
 
 [Web page view]( http://XXX.github.io/walkntalk/ "View files with docBrowser" ) &nbsp;
 [Source code view]( https://github.com/walkntalk/r1/ "View files with GitHub")
