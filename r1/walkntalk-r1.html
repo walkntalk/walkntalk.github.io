@@ -25,21 +25,23 @@
 	}
 
 	#select {
-		margin-left: 5px;
+		margin: 5px;
 	}
 
 	#content {
+		text-align: center;
 	}
 
 	.pic {
-		border: px solid red;
-		float: left;
+		border: 0px solid red;
+		display: inline;
 		height: 150px;
-		margin: 5px;
+		margin: 10px 1%;
 		width: 150px;
 	}
 
 	.txt {
+		font-size: larger;
 		margin: 5px;
 	}
 </style>
@@ -56,8 +58,6 @@
 // https://docs.google.com/spreadsheets/d/1Rn5A4kTfGUq_CydN0odiJiDzdfzb_QDLGgXCC7G8Q1Q/edit?usp=sharing
 
 	var xmlhttp;
-	var count = 5;
-	content.innerHTML = '';
 	var entries;
 
 	getCategories();
@@ -70,6 +70,7 @@
 
 		if ( xmlhttp.readyState == 4 ) {
 
+			select.innerHTML = 'Select a category';
 			content.innerHTML = '';
 			var string = xmlhttp.responseText;
 			var data = JSON.parse( string );
@@ -87,7 +88,7 @@
 	}
 
 	function getTopic( item ) {
-		console.log( item, entries[ item * columns + 1].content.$t );
+console.log( item, entries[ item * columns + 1].content.$t );
 
 		loadJSON( 'https://spreadsheets.google.com/feeds/cells/1Rn5A4kTfGUq_CydN0odiJiDzdfzb_QDLGgXCC7G8Q1Q/' + ( item + 2 ) + '/public/basic?alt=json', callbackTopic );
 		xmlhttp.category = entries[ item * columns + 1 ].content.$t;
@@ -96,26 +97,49 @@
 	function callbackTopic() {
 		if ( xmlhttp.readyState == 4 ) {
 
-			select.innerHTML = '<h2>' + xmlhttp.category + '</h2>';
+			select.innerHTML = '<h2><a href=JavaScript:getCategories(); >&lt;</a> ' + xmlhttp.category + '</h2>' +
+				'Select type';
 
 			content.innerHTML = '';
 
 			var string = xmlhttp.responseText;
 			var data = JSON.parse( string );
 			entries = data.feed.entry;
-			columns = 1
+			columns = 2;
 			var count = entries.length / columns;
 
 			for (var i = 0; i < count; i++) {
 				content.innerHTML +=
-					'<div class=txt >' + i + ' ' + entries[ i * columns ].content.$t + '</div>' +
-
+					'<a href=JavaScript:getEmotion(' + i + '); ><div class=txt >' + i + ' ' + entries[ i * columns ].content.$t + '</div></a>' +
 				'';
 			}
 
 			content.innerHTML +='<a href=JavaScript:getCategories(); ><h1>&lt;</h1></a>';
 
 		}
+	}
+
+	function getEmotion( item ) {
+		var string = xmlhttp.responseText;
+		var data = JSON.parse( string );
+		entries = data.feed.entry;
+		var emotions = entries[ item * columns + 1 ].content.$t;
+
+		emotions = emotions.split(',');
+console.log( emotions );
+		select.innerHTML = '<h2><a href=JavaScript:callbackTopic(); >&lt;</a> ' + xmlhttp.category + ': ' + 
+			entries[ item * columns ].content.$t + '</h2>' +
+		'Select emotion';
+
+		content.innerHTML = '';
+		for (var i = 0, len = emotions.length; i < len; i++) {
+			content.innerHTML +=
+				'<div class=txt>' + i + ' ' + emotions[i] + '</div>' +
+			'';
+		}
+
+		content.innerHTML +='<a href=JavaScript:callbackTopic(); ><h1>&lt;</h1></a>';
+
 	}
 
 	function loadJSON( fname, callback ) {

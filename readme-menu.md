@@ -7,7 +7,7 @@
 </div>
 <br>
 
-<i class="fa fa-external-link"></i> [Live Demo]( http://walkntalk.github.com/ ) 
+<i class="fa fa-external-link"></i> [Live Demo]( http://walkntalk.github.com/latest/ ) 
 
 <i class="fa fa-github"></i> [Source code on GitHub]( https://github.com/walkntalk/ )  
 

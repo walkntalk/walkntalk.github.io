@@ -4,6 +4,7 @@ Walk 'n Talk Read Me
 [Web page view]( http://walkntalk.github.io// "View files with docBrowser" ) &nbsp;
 [Source code view]( https://github.com/walkntalk/ "View files with GitHub")
 
+Note: [current text]( https://robbsdramaticlanguages.wordpress.com/2014/07/31/ ) is for demo purposes only
 
 ### Live Demo
 
@@ -26,7 +27,10 @@ _Walk 'n Talk - latest revision_ / [Full Screen]( http://walkntalk.github.io/lat
 
 ## Features
 <!-- and benefits -->
-
+* Simple tree navigation mobile web app
+* works on any smartphone
+* All data contained in a [Google Docs Spreadsheet]( https://docs.google.com/spreadsheets/d/1Rn5A4kTfGUq_CydN0odiJiDzdfzb_QDLGgXCC7G8Q1Q/edit#gid=0 )
+* Data may be updated in real-time by a non-programmer
 
 ## Road Map
 
@@ -40,8 +44,8 @@ Walk 'n Talk is a [GitHub]( http://github.com) [organization account]( https://h
 All Walk 'n Talk scripts are [FOSS]( https://en.wikipedia.org/wiki/Free_and_open-source_software ).
 
 Sources  
-<http://lorempixel.com/>  
-<https://robbsdramaticlanguages.wordpress.com/2014/07/31/>
+Images: <http://lorempixel.com/>  
+Text Tree: <https://robbsdramaticlanguages.wordpress.com/2014/07/31/>
 
 ## Copyright and License
 
