@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang=en >
+<head>
+<title>Walk 'n Talk</title>
+<meta charset=utf-8 />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+<style>
+	body {
+		font: 300 11pt "Open Sans", sans-serif;
+		margin: 0;
+		max-width: 480px;
+		padding: 0;
+		overflow: hidden;
+	}
+
+	a {
+		text-decoration: none;
+		color: black;
+	}
+
+	h1 {
+		margin: 0;
+		text-align: center;
+	}
+
+	#select {
+		margin-left: 5px;
+	}
+
+	#content {
+	}
+
+	.pic {
+		border: px solid red;
+		float: left;
+		height: 150px;
+		margin: 5px;
+		width: 150px;
+	}
+
+	.txt {
+		margin: 5px;
+	}
+</style>
+</head>
+<body>
+	<h1>Walk 'n Talk</h1>
+	<hr>
+
+	<div id=select >Select a category</div>
+
+	<div id=content ></div>
+
+<script>
+// https://docs.google.com/spreadsheets/d/1Rn5A4kTfGUq_CydN0odiJiDzdfzb_QDLGgXCC7G8Q1Q/edit?usp=sharing
+
+	var xmlhttp;
+	var count = 5;
+	content.innerHTML = '';
+	var entries;
+
+	getCategories();
+
+	function getCategories(  ) {
+		loadJSON( 'https://spreadsheets.google.com/feeds/cells/1Rn5A4kTfGUq_CydN0odiJiDzdfzb_QDLGgXCC7G8Q1Q/1/public/basic?alt=json', callbackJSON );
+	}
+
+	function callbackJSON() {
+
+		if ( xmlhttp.readyState == 4 ) {
+
+			content.innerHTML = '';
+			var string = xmlhttp.responseText;
+			var data = JSON.parse( string );
+			entries = data.feed.entry;
+			columns = 2
+			var count = entries.length / columns;
+
+			for (var i = 0; i < count; i++) {
+				content.innerHTML +=
+					'<a href=JavaScript:getTopic(' + i + '); ><div class=pic ><img src=' + entries[ i * columns ].content.$t + 
+						'/' + entries[ i * columns + 1 ].content.$t + ' /></div></a>' +
+				'';
+			}
+		}
+	}
+
+	function getTopic( item ) {
+		console.log( item, entries[ item * columns + 1].content.$t );
+
+		loadJSON( 'https://spreadsheets.google.com/feeds/cells/1Rn5A4kTfGUq_CydN0odiJiDzdfzb_QDLGgXCC7G8Q1Q/' + ( item + 2 ) + '/public/basic?alt=json', callbackTopic );
+		xmlhttp.category = entries[ item * columns + 1 ].content.$t;
+	}
+
+	function callbackTopic() {
+		if ( xmlhttp.readyState == 4 ) {
+
+			select.innerHTML = '<h2>' + xmlhttp.category + '</h2>';
+
+			content.innerHTML = '';
+
+			var string = xmlhttp.responseText;
+			var data = JSON.parse( string );
+			entries = data.feed.entry;
+			columns = 1
+			var count = entries.length / columns;
+
+			for (var i = 0; i < count; i++) {
+				content.innerHTML +=
+					'<div class=txt >' + i + ' ' + entries[ i * columns ].content.$t + '</div>' +
+
+				'';
+			}
+
+			content.innerHTML +='<a href=JavaScript:getCategories(); ><h1>&lt;</h1></a>';
+
+		}
+	}
+
+	function loadJSON( fname, callback ) {
+
+		xmlhttp = new XMLHttpRequest();
+		xmlhttp.open( 'GET', fname, true );
+		xmlhttp.onreadystatechange = callback;
+		xmlhttp.send( null );
+
+	}
+</script>
+</body>
+</html>
