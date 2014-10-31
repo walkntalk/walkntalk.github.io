@@ -4,14 +4,14 @@ Walk 'n Talk Read Me
 [Web page view]( http://walkntalk.github.io// "View files with docBrowser" ) &nbsp;
 [Source code view]( https://github.com/walkntalk/ "View files with GitHub")
 
-Note: [current text]( https://robbsdramaticlanguages.wordpress.com/2014/07/31/ ) is for demo purposes only
+Note: [current text]( https://robbsdramaticlanguages.wordpress.com/2014/07/31/ ) and images are for demo purposes only
 
 ### Live Demo
 
 <iframe src="http://walkntalk.github.io/latest/index.html" width=100% height=500px class='overview' >
 There is an `iframe` here. It is not visible when viewed on github.com/walkntalk/. To view, click 'Web page view' just above.
 </iframe>
-_Walk 'n Talk - latest revision_ / [Full Screen]( http://walkntalk.github.io/latest/index.html)
+_Walk 'n Talk - latest revision_ / [Full Screen]( http://walkntalk.github.io/latest/index.html) << open this link on your phone
 
 
 
@@ -28,7 +28,7 @@ _Walk 'n Talk - latest revision_ / [Full Screen]( http://walkntalk.github.io/lat
 ## Features
 <!-- and benefits -->
 * Simple tree navigation mobile web app
-* works on any smartphone
+* Works on any smart phone
 * All data contained in a [Google Docs Spreadsheet]( https://docs.google.com/spreadsheets/d/1Rn5A4kTfGUq_CydN0odiJiDzdfzb_QDLGgXCC7G8Q1Q/edit#gid=0 )
 * Data may be updated in real-time by a non-programmer
 
@@ -56,6 +56,10 @@ This repository contains files that are at an early and volatile stage. Not all 
 
 
 ## Change Log
+
+2014-10-31 ~ Theo
+
+* First commit
 
 
 
