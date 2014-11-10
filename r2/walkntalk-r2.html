@@ -70,8 +70,6 @@
 		</div>
 	</div>
 
-
-
 <script>
 // https://docs.google.com/spreadsheets/d/1leL7wiXru_ytePjPwn9IUGD7PbuGKWfR0sxY_jHhBy4/edit#gid=0
 
@@ -82,7 +80,7 @@
 
 		owl.owlCarousel({
 //			autoPlay: 2000,
-			items : 5,
+			items : 3,
 			itemsDesktop : [1199,3],
 			itemsDesktopSmall : [979,3],
 		});
@@ -207,16 +205,17 @@ console.log("clickSlider", index);
 
 		var count = entriesCarousel.length / columns;
 		data = owl.data( 'owlCarousel' );
-
+		var style, index;
 		for (var i = 0, len = data.itemsAmount; i < len; i++) {
 			data.removeItem( 0 );
 		}
 
-
 		for ( var i = 2; i < count; i++ ) {
+
 			if (( entriesCarousel[ 0 ].content.$t === 'Language' && i === language ) ||
 					( entriesCarousel[ i * columns + 2 ].content.$t === entriesSlider[ 0 ].content.$t )) {
 				style = 'style=background:#7fc242;';
+				index = i;
 			} else {
 				style = '';
 			}
@@ -229,6 +228,15 @@ console.log("clickSlider", index);
 		}
 
 		owl.trigger("owl.goTo", language );
+
+		if ( entriesCarousel[ 0 ].content.$t === 'Language' ) {
+
+			owl.trigger("owl.goTo", language );
+
+		} else {
+
+			owl.trigger("owl.goTo", index - 2 );
+		}
 
 		setHeader();
 
@@ -244,7 +252,6 @@ console.log("clickSlider", index);
 		} else {
 
 			buildPage( 1 + index );
-
 		}
 
 	}
