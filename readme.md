@@ -17,7 +17,7 @@ Things you can do:
 * Swipe the 'Carousel' area from side to side
 * Push and pull the 'Slider' area up and down
 
-Tings to note:
+Things to note:
 
 * Vocabularies display in English plus your choice of Spanish, French, Russian or Chinese
 * Word lists are kept in an online shared Google Docs Spreadsheet
@@ -46,6 +46,7 @@ Display hierarchies of vocabularies
 
 * Add images
 * Add more data
+* Text to speech capability
 
 ## Issues
 
