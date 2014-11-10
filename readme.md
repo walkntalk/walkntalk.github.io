@@ -57,6 +57,10 @@ This repository contains files that are at an early and volatile stage. Not all 
 
 ## Change Log
 
+2014-11-09 ~ Theo
+
+* R2
+
 2014-10-31 ~ Theo
 
 * First commit
