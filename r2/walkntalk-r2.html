@@ -84,7 +84,7 @@
 //			autoPlay: 2000,
 			items : 5,
 			itemsDesktop : [1199,3],
-			itemsDesktopSmall : [979,3]
+			itemsDesktopSmall : [979,3],
 		});
 
 	});
@@ -114,8 +114,6 @@
 
 			entriesSlider = sheets[ index ];
 
-//			setHeader();
-
 			setSlider();
 
 		}
@@ -139,8 +137,6 @@
 		entriesSlider = response.feed.entry;
 
 		sheets[ xmlhttp.index ] = entriesSlider;
-
-
 
 		setSlider();
 
@@ -210,7 +206,7 @@ console.log("clickSlider", index);
 	function setCarousel () {
 
 		var count = entriesCarousel.length / columns;
-		var data = owl.data( 'owlCarousel' );
+		data = owl.data( 'owlCarousel' );
 
 		for (var i = 0, len = data.itemsAmount; i < len; i++) {
 			data.removeItem( 0 );
@@ -230,8 +226,9 @@ console.log("clickSlider", index);
 				entriesCarousel[ i * columns + language ].content.$t + '</a>' +
 			'' );
 
- 
 		}
+
+		owl.trigger("owl.goTo", language );
 
 		setHeader();
 
