@@ -2,7 +2,7 @@ Walk 'n Talk Read Me
 ===
 
 [Web page view]( http://walkntalk.github.io// "View files with docBrowser" ) &nbsp;
-[Source code view]( https://github.com/walkntalk/ "View files with GitHub")
+[Source code view]( https://github.com/walkntalk/walkntalk.github.io "View files with GitHub")
 
 Note: [current text]( https://robbsdramaticlanguages.wordpress.com/2014/07/31/ ) and images are for demo purposes only
 
@@ -11,7 +11,7 @@ Note: [current text]( https://robbsdramaticlanguages.wordpress.com/2014/07/31/ )
 <iframe src="http://walkntalk.github.io/latest/index.html" width=100% height=500px class='overview' >
 There is an `iframe` here. It is not visible when viewed on github.com/walkntalk/. To view, click 'Web page view' just above.
 </iframe>
-_Walk 'n Talk - latest revision_ / [Full Screen]( http://walkntalk.github.io/latest/index.html) << open this link on your phone
+_Walk 'n Talk - latest revision_ / [Full Screen]( http://walkntalk.github.io/latest/index.html ) << open this link on your phone
 
 
 
