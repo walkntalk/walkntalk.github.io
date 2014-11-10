@@ -5,9 +5,7 @@
 <title>WALKnTALK</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="jQuery Responsive Carousel - Owl Carousel">
-
 <link href="http://owlgraphic.com/owlcarousel/assets/css/bootstrapTheme.css" rel="stylesheet">
-
 <link href="http://owlgraphic.com/owlcarousel/owl-carousel/owl.carousel.css" rel="stylesheet">
 <link href="http://owlgraphic.com/owlcarousel/owl-carousel/owl.theme.css" rel="stylesheet">
 
@@ -141,8 +139,10 @@
 	}
 
 	function setHeader () {
+
 		var title = entriesCarousel[ 0 ].content.$t;
 		var index = entriesCarousel[ 2 ].content.$t;
+
 		header.innerHTML = '<a href=JavaScript:buildPage(' + index + '); >' + title + '</a>';
 
 	}
@@ -205,20 +205,27 @@ console.log("clickSlider", index);
 	function setCarousel () {
 
 		var count = entriesCarousel.length / columns;
-		data = owl.data( 'owlCarousel' );
+		var data = owl.data( 'owlCarousel' );
 		var style, index;
+
 		for (var i = 0, len = data.itemsAmount; i < len; i++) {
+
 			data.removeItem( 0 );
+
 		}
 
 		for ( var i = 2; i < count; i++ ) {
 
 			if (( entriesCarousel[ 0 ].content.$t === 'Language' && i === language ) ||
 					( entriesCarousel[ i * columns + 2 ].content.$t === entriesSlider[ 0 ].content.$t )) {
+
 				style = 'style=background:#7fc242;';
 				index = i;
+
 			} else {
+
 				style = '';
+
 			}
 
 			data.addItem( '<a href=JavaScript:clickCarousel(' + i + '); class="item link" ' + style + ' >' +  
@@ -253,6 +260,7 @@ console.log("clickSlider", index);
 		} else {
 
 			buildPage( 1 + index );
+
 		}
 
 	}
