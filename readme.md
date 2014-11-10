@@ -44,9 +44,23 @@ Display hierarchies of vocabularies
 
 ## Road Map
 
+* Add images
+* Add more data
 
-## Issues /Bugs
+## Issues
 
+The script is being built on Windows 8.1 with the latest Chrome browser. Testing is being carried out on a Google Nexus 5 / stock Android phone.
+
+The scripts makes a number of calls to Google servers. The first load is likely to take a long time or fail. Reload frequently.
+
+If you edit the spreadsheet, it may be best to use a computer to see the results. The cache on your phone may prevent you from seeing updates in a timely manner.
+
+When you need to use a mobile device for testing, it may be better to use 'incognito' mode as scripts are not cached.
+
+## Bugs
+
+* Clicking the header sometimes takes you back up to the top (Language level) when it should just go up a single level
+ 
 
 ## Project Links
 
@@ -54,8 +68,10 @@ Walk 'n Talk is a [GitHub]( http://github.com) [organization account]( https://h
 All Walk 'n Talk scripts are [FOSS]( https://en.wikipedia.org/wiki/Free_and_open-source_software ).
 
 Sources  
+
+jQuery Carousel: <http://owlgraphic.com/owlcarousel/index.html>  
 Images: <http://lorempixel.com/>  
-Text Tree: <https://robbsdramaticlanguages.wordpress.com/2014/07/31/>
+Text Tree: <https://robbsdramaticlanguages.wordpress.com/2014/07/31/>  
 
 ## Copyright and License
 
@@ -70,6 +86,7 @@ This repository contains files that are at an early and volatile stage. Not all 
 2014-11-09 ~ Theo
 
 * R2
+* Update Read Me
 
 2014-10-31 ~ Theo
 
