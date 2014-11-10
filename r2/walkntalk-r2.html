@@ -88,7 +88,7 @@
 	});
 
 	var xmlhttp;
-	var language = 6;
+	var language = 3;
 	var columns = 7;
 	var entriesSlider;
 	var entriesCarousel;
@@ -141,8 +141,9 @@
 	}
 
 	function setHeader () {
-
-		header.innerHTML = '<a href=JavaScript:buildPage(2); >' + entriesCarousel[ 0 ].content.$t + '</a>';
+		var title = entriesCarousel[ 0 ].content.$t;
+		var index = entriesCarousel[ 2 ].content.$t;
+		header.innerHTML = '<a href=JavaScript:buildPage(' + index + '); >' + title + '</a>';
 
 	}
 
@@ -231,7 +232,7 @@ console.log("clickSlider", index);
 
 		if ( entriesCarousel[ 0 ].content.$t === 'Language' ) {
 
-			owl.trigger("owl.goTo", language );
+			owl.trigger( "owl.goTo", language - 2 );
 
 		} else {
 
